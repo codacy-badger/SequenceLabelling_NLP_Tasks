@@ -175,7 +175,7 @@ def main():
     # print("Test set F1 score: %f" % f1_score_test)
     if task == 'pos':
         train_mlp_score = accuracy_score(my_train_y, mlppredtrain)
-        test_mlp_score = accuracy_score(my_test_y, mlppredtest
+        test_mlp_score = accuracy_score(my_test_y, mlppredtest)
         print("Training MLP score: %f" % train_mlp_score )
         print("Testing MLP score: %f" % test_mlp_score)
     else: 
