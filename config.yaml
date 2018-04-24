@@ -1,6 +1,6 @@
 #path_vectors: ./../../../test/data/embeddings/npy/
 
-path_vectors: C:\\Users\\samar\\Desktop\\ML\\ML_Project\\data\\glove-emb\\100d\\
-path_dataset: C:\\Users\\samar\\Desktop\\ML\\ML_Project\\data\\
-window: 5
-task: ner
+path_vectors: /usr/cs/grad/master/svenkatr/Desktop/SequenceLabelling_NLP_Tasks/data/glove-emb/300d
+path_dataset: /usr/cs/grad/master/svenkatr/Desktop/SequenceLabelling_NLP_Tasks/data
+window: 4
+task: pos

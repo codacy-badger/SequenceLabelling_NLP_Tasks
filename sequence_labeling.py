@@ -3,6 +3,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neural_network import MLPClassifier
 import warnings
 from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score
 import sys
 import yaml
 import load_data
@@ -172,14 +173,17 @@ def main():
 
     # print("Training set F1 score: %f" % f1_score_train)
     # print("Test set F1 score: %f" % f1_score_test)
+    if task == 'pos':
+        train_mlp_score = accuracy_score(my_train_y, mlppredtrain)
+        test_mlp_score = accuracy_score(my_test_y, mlppredtest
+        print("Training MLP score: %f" % train_mlp_score )
+        print("Testing MLP score: %f" % test_mlp_score)
+    else: 
+        f1_score_train_mlp = f1_score(my_train_y, mlppredtrain, average='weighted')
+        f1_score_test_mlp = f1_score(my_test_y, mlppredtest, average='weighted')
 
-    f1_score_train_mlp = f1_score(
-        my_train_y, mlppredtrain, average='weighted')
-    f1_score_test_mlp = f1_score(
-        my_test_y, mlppredtest, average='weighted')
-
-    print("Training MLP set F1 score: %f" % f1_score_train_mlp)
-    print("Test MLP set F1 score: %f" % f1_score_test_mlp)
+        print("Training MLP set F1 score: %f" % f1_score_train_mlp)
+        print("Test MLP set F1 score: %f" % f1_score_test_mlp)
     print("Elapsed: %f mins" % ((time.time() - stTime)/TMUL))
     # pred = svm.predict(my_test_x)
     # f1 = f1_score(my_train_y, pred, average='weighted')
